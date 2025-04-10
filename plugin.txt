@@ -1,0 +1,40 @@
+ 1. Function to Check if a Number is Prime
+ int is_prime(int n) {
+    if (n <= 1) return 0;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            return 0;
+    }
+    return 1;
+}
+2.Function to Generate Fibonacci Series
+void generate_fibonacci(int n, int fib[]) {
+    fib[0] = 0;
+    if (n > 1) fib[1] = 1;
+    for (int i = 2; i < n; i++)
+        fib[i] = fib[i - 1] + fib[i - 2];
+}
+3.Function to Reverse a String
+void reverse_string(char *str) {
+    int len = strlen(str);
+    for (int i = 0, j = len - 1; i < j; i++, j--) {
+        char tmp = str[i];
+        str[i] = str[j];
+        str[j] = tmp;
+    }
+}
+4. Function to Check Identity Matrix
+int is_identity_matrix(int matrix[10][10], int size) {
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            if ((i == j && matrix[i][j] != 1) || (i != j && matrix[i][j] != 0))
+                return 0;
+    return 1;
+}
+5.Function to Replace Spaces in String
+void replace_spaces(char *str, char symbol) {
+    for (int i = 0; str[i]; i++) {
+        if (str[i] == ' ')
+            str[i] = symbol;
+    }
+}
